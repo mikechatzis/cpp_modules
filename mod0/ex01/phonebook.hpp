@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 09:55:54 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/19 15:23:51 by mchatzip         ###   ########.fr       */
+/*   Created: 2022/02/02 17:29:08 by mchatzip          #+#    #+#             */
+/*   Updated: 2022/02/03 15:15:02 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+# include <iostream>
+# include <iomanip>
+# include <string>
+
+class Contact
+{
+	public:
+		char firstname[22], lastname[22], nickname[22], darkest_secret[42], phone_number[15];
+		bool on;
+		
+};
+
+class PhoneBook
+{
+	public:
+		Contact con[8];
+		int in;
+};
+
+
+#endif

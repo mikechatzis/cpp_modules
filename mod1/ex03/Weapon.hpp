@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 09:55:54 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/19 15:23:51 by mchatzip         ###   ########.fr       */
+/*   Created: 2021/05/21 14:41:30 by mchatzip          #+#    #+#             */
+/*   Updated: 2022/02/08 15:52:19 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef WEAPON_H
+#define WEAPON_H
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+class Weapon
+{
+private:
+	std::string type;
+public:
+	Weapon(std::string const type);
+	~Weapon();
+
+	std::string const &getType() const;
+	void	setType(std::string const newWeapon);
+};
+
+#endif

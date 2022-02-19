@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 09:55:54 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/19 15:23:51 by mchatzip         ###   ########.fr       */
+/*   Created: 2022/02/07 17:31:43 by mchatzip          #+#    #+#             */
+/*   Updated: 2022/02/08 13:48:34 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Zombie.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+Zombie* zombieHorde( int N, std::string name )
+{
+	std::vector<Zombie*> horde;
+	horde.reserve(N);
+	for (int i=0; i<N; i++)
+	{
+		horde[i] = new Zombie;
+		horde[i]->assignName(name);
+		horde[i]->announce();
+	}
+	for (int i = 1; i < N; i++)
+		delete horde[i];
+	return (horde[0]);
 }

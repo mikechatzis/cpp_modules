@@ -5,22 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 09:55:54 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/19 15:23:51 by mchatzip         ###   ########.fr       */
+/*   Created: 2021/05/21 14:41:30 by mchatzip          #+#    #+#             */
+/*   Updated: 2022/02/08 16:13:29 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+int main()
+{
+{
+Weapon club = Weapon("crude spiked club");
+HumanA bob("Bob", club);
+bob.attack();
+club.setType("some other type of club");
+bob.attack();
+}
+{
+Weapon club = Weapon("crude spiked club");
+HumanB jim("Jim");
+jim.setWeapon(club);
+jim.attack();
+club.setType("some other type of club");
+jim.attack();
+}
+return 0;
 }
