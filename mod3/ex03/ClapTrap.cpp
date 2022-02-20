@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:41:31 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/20 16:18:40 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:41:42 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,16 @@ void ClapTrap::setData(const std::string& name, int HP, int EP, int AD, int HPma
 std::string &ClapTrap::getName()
 {
 	return(this->Name);
+}
+
+void ClapTrap::setName(std:: string const &name)
+{
+	this->Name = name;
+}
+
+void ClapTrap::printStats()
+{
+	std::cout << "HP: " << this->HP << std::endl;
+	std::cout << "EP: " << this->EP << std::endl;
+	std::cout << "AD: " << this->AD << std::endl;
 }

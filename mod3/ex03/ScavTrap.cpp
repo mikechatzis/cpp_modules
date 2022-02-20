@@ -6,18 +6,32 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:37:37 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/20 16:30:45 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:49:48 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap()
+{
+	this->HP = 22;
+	this->EP = 22;
+	this->AD = 22;
+	this->HPmax = 22;
+	std::cout << "ScavTrap constructor called" << std::endl;
+}
+
 ScavTrap::ScavTrap(const std::string name)
 {
-	this->setData(name, 100, 50, 20, 100);
+	this->HP = 22;
+	this->EP = 22;
+	this->AD = 22;
+	this->HPmax = 22;
+	this->setData(name, 22, 22, 22, 22);
 	this->gatekeep = false;
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
+
 
 ScavTrap::~ScavTrap()
 {
@@ -33,4 +47,15 @@ void ScavTrap::guardGate()
 	}
 	this->gatekeep = true;
 	std::cout << "ScavTrap " << this->getName() << " now guards the gateZ !" << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+	if (!this->EP)
+	{
+		std::cout << "DiamondTrap " << this->getName() << " has no energy left to attack" << std::endl;
+		return; 
+	}
+	this->EP -= 1;
+		std::cout << "DiamondTrap " << this->getName() << " attacks " << target << " causing " << this->AD << " points of damage!" << std::endl;
 }

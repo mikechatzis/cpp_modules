@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 12:51:15 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/20 16:29:47 by mchatzip         ###   ########.fr       */
+/*   Created: 2022/02/20 16:03:45 by mchatzip          #+#    #+#             */
+/*   Updated: 2022/02/20 17:36:37 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DIAMONDTRAP_H
+# define DIAMONDTRAP_H
+
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string const name)
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	this->setData(name, 100, 100, 30, 100);
-	std::cout << "FragTrap constructor called" << std::endl;
-}
+private:
+	std::string Name;
+public:
+	DiamondTrap(std::string name);
+	~DiamondTrap();
 
-FragTrap::~FragTrap()
-{
-	std::cout << "FragTrap destructor called" << std::endl;
-}
+	void whoAmI();
+};
 
-void FragTrap::highFivesGuys()
-{
-	std::cout << "FragTrap " << this->getName() << " accepted a high-five !" << std::endl;
-}
+#endif

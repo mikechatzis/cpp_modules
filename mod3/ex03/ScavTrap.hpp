@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 12:51:15 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/20 16:29:47 by mchatzip         ###   ########.fr       */
+/*   Created: 2022/02/19 18:34:39 by mchatzip          #+#    #+#             */
+/*   Updated: 2022/02/20 17:22:06 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
-FragTrap::FragTrap(std::string const name)
-{
-	this->setData(name, 100, 100, 30, 100);
-	std::cout << "FragTrap constructor called" << std::endl;
-}
+#include "ClapTrap.hpp"
 
-FragTrap::~FragTrap()
+class ScavTrap : virtual public ClapTrap
 {
-	std::cout << "FragTrap destructor called" << std::endl;
-}
+	private:
+		bool gatekeep;
+	public:
+		int HP, EP, AD, HPmax;
+		
+		ScavTrap();
+		ScavTrap(const std::string name);
+		~ScavTrap();
 
-void FragTrap::highFivesGuys()
-{
-	std::cout << "FragTrap " << this->getName() << " accepted a high-five !" << std::endl;
-}
+		void attack(const std::string& target);
+		void guardGate();
+};
+
+#endif
