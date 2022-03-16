@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:34:39 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/20 16:30:32 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:06:11 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ class FragTrap : public ClapTrap
 		bool gatekeep;
 	public:
 		FragTrap(const std::string name);
+		FragTrap(FragTrap const &other);
 		~FragTrap();
+
+		FragTrap &operator=(FragTrap const &other);
 
 		void highFivesGuys(void);
 };

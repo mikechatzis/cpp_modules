@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:19:48 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/05 16:51:31 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:25:51 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &targ) : Form("shrubbery", 145, 137), target(targ)
 {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other):
+	Form(other), target(other.target)
+{}
+
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &other)
+{
+	(void)other;
+	return (*this);
+}
 
 void ShrubberyCreationForm::beExecuted() const
 {

@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:41:31 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/19 19:20:42 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:34:11 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "Claptrap Constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &other)
+{
+	this->Name = other.Name;
+	this->HP = other.HP;
+	this->EP = other.EP;
+	this->AD = other.AD;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name)
@@ -30,6 +39,15 @@ ClapTrap::ClapTrap(const std::string name)
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Claptrap Destructor called" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &other)
+{
+	this->Name = other.Name;
+	this->HP = other.HP;
+	this->EP = other.EP;
+	this->AD = other.AD;
+	return *this;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -79,7 +97,7 @@ void ClapTrap::setData(const std::string& name, int HP, int EP, int AD, int HPma
 	this-> AD = AD; this->HPmax = HPmax;
 }
 
-std::string &ClapTrap::getName()
+std::string ClapTrap::getName() const
 {
 	return(this->Name);
 }

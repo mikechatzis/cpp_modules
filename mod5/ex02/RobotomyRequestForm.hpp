@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 14:28:02 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/03 15:33:22 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:21:26 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ class	RobotomyRequestForm : virtual public Form
 		std::string const target;
 	public:
 		RobotomyRequestForm(std::string const &targ);
+		RobotomyRequestForm(RobotomyRequestForm const &other);
 		~RobotomyRequestForm(){};
+
+			RobotomyRequestForm &operator=(RobotomyRequestForm const &other);
 	
 	void beExecuted() const;
 	void execute(Bureaucrat const & executor) const;

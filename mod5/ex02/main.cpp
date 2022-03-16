@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 13:19:21 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/03 15:45:43 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:40:18 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int main()
 
 	Bureaucrat b("Slave", 1);
 
-	// b.SignForm(drill);
-	// b.SignForm(newbush);
-	// std::cout << &drill << std::endl;
-	// std::cout << &newbush << std::endl;
+	b.SignForm(drill);
+	b.SignForm(newbush);
+	std::cout << &drill << std::endl;
+	std::cout << &newbush << std::endl;
 
 	b.executeForm(drill);
 	b.executeForm(newbush);

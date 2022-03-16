@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:19:48 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/03 15:35:25 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:23:31 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const &targ) : Form("robotomy", 72, 45), target(targ)
 {}
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other):
+	Form(other), target(other.target)
+{}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &other)
+{
+	(void)other;
+	return (*this);
+}
 
 void RobotomyRequestForm::beExecuted() const
 {

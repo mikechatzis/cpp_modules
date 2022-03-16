@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:38:43 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/19 18:29:54 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 15:43:15 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,14 @@ class ClapTrap
 		int HP, EP, AD;
 	public:
 		ClapTrap(const std::string name);
+		ClapTrap(ClapTrap const &other);
 		~ClapTrap();
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+
+		ClapTrap &operator=(ClapTrap const &other);
 };
 
 #endif

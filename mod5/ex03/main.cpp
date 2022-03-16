@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 13:19:21 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/04 16:36:46 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:44:19 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
 	std::cout << newbush << std::endl;
 
 	b.executeForm(drill);
-	// b.executeForm(newbush);
+	// b.executeForm(*newbush);
 	if (newbush)
 		newbush->execute(b);
 	delete newbush;

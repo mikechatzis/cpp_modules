@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:19:48 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/04 16:36:32 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:20:39 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const &targ) : Form("Presidential Pardon", 25, 5), target(targ)
 {}
+
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &other):
+	Form(other), target(other.target)
+{}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &other)
+{
+	(void)other;
+	return (*this);
+}
 
 void PresidentialPardonForm::beExecuted() const
 {

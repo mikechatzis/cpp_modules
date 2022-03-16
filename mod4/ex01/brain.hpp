@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:47:33 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/22 11:00:20 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/16 14:01:35 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ class Brain
 {
 	public:
 		Brain();
+		Brain(Brain const &other);
 		~Brain();
 		
 	std::string ideas[100];
+	
+	Brain const &operator=(Brain const &other);
 };
 
 #endif

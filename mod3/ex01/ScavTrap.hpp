@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:34:39 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/19 19:21:20 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:00:49 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ class ScavTrap : public ClapTrap
 		bool gatekeep;
 	public:
 		ScavTrap(const std::string name);
+		ScavTrap(ScavTrap const &other);
 		~ScavTrap();
+
+		ScavTrap &operator=(ScavTrap const &other);
 
 		void guardGate();
 };

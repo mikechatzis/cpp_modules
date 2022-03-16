@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:29:59 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/22 11:00:52 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/16 14:37:58 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@ class Animal
 		std::string type;
 	public:
 		Animal();
-		Animal(std::string type);
+		Animal(Animal const &other);
 		virtual ~Animal();
 
 		virtual void makeSound() const;
-		virtual void expressThoughts() const;
+		virtual void expressThoughts()const;
 		void setType(std::string type);
 		std::string getType() const;
+
+		Animal const &operator=(Animal const &other);
 };
 
 class Dog : virtual public Animal
@@ -37,16 +39,18 @@ class Dog : virtual public Animal
 	private:
 		Brain *brain;
 	protected:
-		std::string type;
 		std::string name;
 	public:
 		Dog();
+		Dog(Dog const &other);
 		Dog(std::string name);
 		~Dog();
 
 		void makeSound() const;
-		std::string getType() const;
 		void expressThoughts() const;
+		void getBrainAddr() const;
+
+		Dog const &operator=(Dog const &other);
 };
 
 class Cat : virtual public Animal
@@ -54,16 +58,18 @@ class Cat : virtual public Animal
 	private:
 		Brain *brain;
 	protected:
-		std::string type;
 		std::string name;
 	public:
 		Cat();
+		Cat(Cat const &other);
 		Cat(std::string name);
 		~Cat();
 
 		void makeSound() const;
 		void expressThoughts() const;
-		std::string getType() const;
+		void getBrainAddr() const;
+
+		Cat const &operator=(Cat const &other);
 };
 
 #endif

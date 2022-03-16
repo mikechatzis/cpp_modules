@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 11:04:01 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/04 16:16:30 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:15:05 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class	Form
 		size_t const reqexecgrade;
 	public:
 		Form(std::string const &nam, size_t const signg, size_t const execg);
+		Form(Form const &other);
 		virtual~Form();
 
 		class	GradeTooLowException : public std::exception
@@ -65,6 +66,8 @@ class	Form
 		bool beSigned(Bureaucrat *b);
 		virtual void execute(Bureaucrat const & executor) const = 0;
 		virtual void execute(Bureaucrat const *executor) const = 0;
+
+	Form &operator=(Form const &other);
 
 	friend std::ostream &operator<<(std::ostream &os, const Form &b);
 	friend std::ostream &operator<<(std::ostream &os, const Form *b);

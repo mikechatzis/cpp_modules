@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:05:22 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/21 13:27:55 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/16 14:40:27 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,29 @@ int main()
 	i->expressThoughts();
 	j->expressThoughts();
 	meta->expressThoughts();
+
+	const Cat kitty("Queen");
+	const Cat cat = kitty;
+	std::cout << "------------------" << std::endl;
+	std::cout << &cat << std::endl;
+	std::cout << &kitty << std::endl;
+	kitty.getBrainAddr();
+	cat.getBrainAddr();
+	cat.expressThoughts();
+	std::cout << kitty.getType() << std::endl;
+	std::cout << "------------------" << std::endl;
+
+	const Dog dogo("Lassie");
+	const Dog dog(dogo);
+	std::cout << "------------------" << std::endl;
+	std::cout << &dog << std::endl;
+	std::cout << &dogo << std::endl;
+	dogo.getBrainAddr();
+	dog.getBrainAddr();
+	dog.expressThoughts();
+	std::cout << dog.getType() << std::endl;
+	std::cout << "------------------" << std::endl;
+	
 	delete meta; delete i; delete j;
 	return 0;
 }

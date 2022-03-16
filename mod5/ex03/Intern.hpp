@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:10:04 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/04 15:53:35 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:27:17 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ class Intern
 		Form *newpresidentialpardon(std::string const &t);
 	public:
 		Intern();
+		Intern(Intern const &other);
 		~Intern(){}
 		
+		Intern &operator=(Intern const &other);
+
 		std::vector<std::string> types;
 		Form *makeForm(std::string const &name, std::string const &target);
 };

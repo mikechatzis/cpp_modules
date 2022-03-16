@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:34:40 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/21 12:29:10 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/16 13:50:01 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,21 @@ Animal::Animal(std::string type)
 	std::cout << "Animal typedef constructor called" << std::endl;
 }
 
+Animal::Animal(Animal const &other)
+{
+	this->type = other.type;
+	std::cout << "Animal copy constructor called" << std::endl;
+}
+
 Animal::~Animal()
 {
 	std::cout << "Animal destructor called"  << std::endl;
+}
+
+Animal const &Animal::operator=(Animal const &other)
+{
+	this->type = other.type;
+	return *this;
 }
 
 void Animal::makeSound() const
@@ -48,21 +60,32 @@ std::string Animal::getType() const
 Dog::Dog()
 {
 	this->type = "Dog";
-	this->setType("Dog");
 	std::cout << "Nameless Dog constructor called" << std::endl;
 }
 
 Dog::Dog(std::string name)
 {
 	this->type = "Dog";
-	this->setType("Dog");
 	this->name = name;
 	std::cout << "Dog \"" << this->name << "\" constructor called" << std::endl;
+}
+
+Dog::Dog(Dog const &other)
+{
+	this->type = "Dog";
+	this->name = other.name;
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog::~Dog()
 {
 	std::cout <<"Dog " << this->name << " destructor called" << std::endl;
+}
+
+Dog const &Dog::operator=(Dog const &other)
+{
+	this->name = other.name;
+	return *this;
 }
 
 void Dog::makeSound() const
@@ -92,10 +115,24 @@ Cat::Cat(std::string name)
 	std::cout << "Cat \"" << this->name << "\" constructor called" << std::endl;
 }
 
+Cat::Cat(Cat const &other)
+{
+	this->type = "Cat";
+	this->name = other.name;
+	std::cout << "Cat copy constructor called" << std::endl;
+}
+
+Cat const &Cat::operator=(Cat const &other)
+{
+	this->name = other.name;
+	return *this;
+}
+
 Cat::~Cat()
 {
 	std::cout <<"Cat " << this->name << " destructor called" << std::endl;
 }
+
 
 void Cat::makeSound() const
 {

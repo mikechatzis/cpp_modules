@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:41:31 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/19 18:29:54 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 15:49:05 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,27 @@ ClapTrap::ClapTrap(const std::string name)
 	std::cout << "Constructor called" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap const &other)
+{
+	this->Name = other.Name;
+	this->HP = other.HP;
+	this->EP = other.EP;
+	this->AD = other.AD;
+	std::cout << "Copy constructor called" << std::endl;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Destructor called" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &other)
+{
+	this->Name = other.Name;
+	this->HP = other.HP;
+	this->EP = other.EP;
+	this->AD = other.AD;
+	return *this;
 }
 
 void ClapTrap::attack(const std::string& target)

@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:37:37 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/20 16:30:45 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:04:50 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,23 @@ ScavTrap::ScavTrap(const std::string name)
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
+ScavTrap::ScavTrap(ScavTrap const &other)
+{
+	this->setData(other.getName(), 100, 50, 20, 100);
+	this->gatekeep = false;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &other)
+{
+	this->setData(other.getName(), 100, 50, 20, 100);
+	this->gatekeep = other.gatekeep;
+	return *this;
 }
 
 void ScavTrap::guardGate()

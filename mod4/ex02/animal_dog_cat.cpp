@@ -6,23 +6,18 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:34:40 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/22 11:11:06 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/16 14:41:25 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "animal_dog_cat.hpp"
 #include "brain.hpp"
 
-Animal::Animal()
+Animal::Animal() : type("Abstract")
 {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(std::string type)
-{
-	this->type = type;
-	std::cout << "Animal typedef constructor called" << std::endl;
-}
 
 Animal::~Animal()
 {
@@ -49,13 +44,24 @@ void Animal::expressThoughts() const
 	std::cout << "Archetype \"Animal\" has no functional brain" << std::endl;
 }
 
+Animal::Animal(Animal const &other)
+{
+	this->type = other.type;
+	std::cout << "Animal copy constructor called" << std::endl;
+}
+
+Animal const &Animal::operator=(Animal const &other)
+{
+	this->type = other.type;
+	return *this;
+}
+
 /* Dog class functions*/
 
 Dog::Dog()
 {
 	this->brain = new Brain();
 	this->type = "Dog";
-	this->setType("Dog");
 	for (size_t i = 0; i < 100; i++)
 		this->brain->ideas[i].append("whatever dogs think");
 	std::cout << "Nameless Dog constructor called" << std::endl;
@@ -65,7 +71,6 @@ Dog::Dog(std::string name)
 {
 	this->brain = new Brain();
 	this->type = "Dog";
-	this->setType("Dog");
 	this->name = name;
 	for (size_t i = 0; i < 100; i++)
 		this->brain->ideas[i].append("whatever dogs think");
@@ -83,14 +88,34 @@ void Dog::makeSound() const
 	std::cout << "woof woof !!" << std::endl;
 }
 
-std::string Dog::getType() const
-{
-	return(this->type);
-}
-
 void Dog::expressThoughts() const
 {
 	std::cout << this->brain->ideas[0] << std::endl;
+}
+
+Dog::Dog(Dog const &other)
+{
+	this->type = "Dog";
+	this->name = other.name;
+	this->brain = new Brain();
+	for (size_t i = 0; i < 100; i++)
+		this->brain->ideas[i] = other.brain->ideas[i];
+	std::cout << "Dog copy constructor called" << std::endl;
+}
+
+Dog const &Dog::operator=(Dog const &other)
+{
+	this->name = other.name;
+	delete this->brain;
+	this->brain = new Brain();
+	for (size_t i = 0; i < 100; i++)
+		this->brain->ideas[i] = other.brain->ideas[i];
+	return *this;
+}
+
+void Dog::getBrainAddr() const
+{
+	std::cout << "Address of Cat: " << this->name << ", is " << this->brain << std::endl;;
 }
 
 /* Cat class functions*/
@@ -101,7 +126,6 @@ Cat::Cat()
 	for (size_t i = 0; i < 100; i++)
 		this->brain->ideas[i].append("whatever cats think");
 	this->type = "Cat";
-	this->setType("Cat");
 	std::cout << "Nameless Cat constructor called" << std::endl;
 }
 
@@ -111,7 +135,6 @@ Cat::Cat(std::string name)
 	for (size_t i = 0; i < 100; i++)
 		this->brain->ideas[i].append("whatever cats think");
 	this->type = "Cat";
-	this->setType("Cat");
 	this->name = name;
 	std::cout << "Cat \"" << this->name << "\" constructor called" << std::endl;
 }
@@ -127,12 +150,32 @@ void Cat::makeSound() const
 	std::cout << "where is my tuna slave !?\n.....I meant \"meow\"" << std::endl;
 }
 
-std::string Cat::getType() const
-{
-	return(this->type);
-}
-
 void Cat::expressThoughts() const
 {
 	std::cout << this->brain->ideas[0] << std::endl;
+}
+
+Cat::Cat(Cat const &other)
+{
+	this->type = "Cat";
+	this->name = other.name;
+	this->brain = new Brain();
+	for (size_t i = 0; i < 100; i++)
+		this->brain->ideas[i] = other.brain->ideas[i];
+	std::cout << "Cat copy constructor called" << std::endl;
+}
+
+Cat const &Cat::operator=(Cat const &other)
+{
+	this->name = other.name;
+	delete this->brain;
+	this->brain = new Brain();
+	for (size_t i = 0; i < 100; i++)
+		this->brain->ideas[i] = other.brain->ideas[i];
+	return *this;
+}
+
+void Cat::getBrainAddr() const
+{
+	std::cout << "Address of Cat: " << this->name << ", is " << this->brain << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 16:07:58 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/04 16:34:12 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:30:22 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,17 @@ Intern::Intern()
 	this->types.push_back("shrubbery");
 	this->types.push_back("robotomy");
 	this->types.push_back("Presidential Pardon");
+}
+
+Intern::Intern(Intern const &other)
+{
+	this->types = other.types;
+}
+
+Intern &Intern::operator=(Intern const &other)
+{
+	(void)other;
+	return (*this);
 }
 
 Form *Intern::newshrubbery(std::string const &t)

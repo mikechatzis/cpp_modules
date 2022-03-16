@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 13:01:03 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/02 13:19:10 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:37:32 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
 	size_t grade;
 public:
 	Bureaucrat(std::string const &nam, size_t grad);
+	Bureaucrat(Bureaucrat const &other);
 	~Bureaucrat();
 	std::string getName();
 	size_t getGrade();
@@ -49,6 +50,8 @@ public:
 				return "Bureaucrat: Grade too high.";
 			}
 	};
+
+	Bureaucrat &operator=(Bureaucrat const &other);
 
 	void SignForm(Form &f);
 	void SignForm(Form *f);

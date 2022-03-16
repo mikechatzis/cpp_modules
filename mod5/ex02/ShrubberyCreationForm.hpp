@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:10:04 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/03 15:33:27 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:24:33 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ class	ShrubberyCreationForm : virtual public Form
 		std::string const target;
 	public:
 		ShrubberyCreationForm(std::string const &targ);
+		ShrubberyCreationForm(ShrubberyCreationForm const &other);
 		~ShrubberyCreationForm(){};
+
+		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &other);
+
 	
 	void beExecuted() const;
 	void execute(Bureaucrat const & executor) const;

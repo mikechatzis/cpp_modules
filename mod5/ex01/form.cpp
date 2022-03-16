@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 11:18:24 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/02 13:10:08 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:16:59 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,22 @@ std::ostream &operator<<(std::ostream &os, const Form &b)
 	return (os);
 }
 
+Form &Form::operator=(Form const &other)
+{
+	this->issigned = other.issigned;
+	return (*this);
+}
+
 Form::Form(std::string const &nam, size_t const signg, size_t const execg) : name(nam), reqsigngrade(signg), reqexecgrade(execg)
+{
+	this->issigned = false;
+	if (this->reqexecgrade < 1 || this->reqsigngrade < 1)
+		throw (Form::GradeTooHighException());
+	else if (this->reqexecgrade > 150 || this->reqsigngrade > 150)
+		throw (Form::GradeTooLowException());
+}
+
+Form::Form(Form const &other) : name(other.name), reqsigngrade(other.reqsigngrade), reqexecgrade(other.reqexecgrade)
 {
 	this->issigned = false;
 	if (this->reqexecgrade < 1 || this->reqsigngrade < 1)
