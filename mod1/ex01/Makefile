@@ -6,7 +6,7 @@
 #    By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 14:41:30 by mchatzip          #+#    #+#              #
-#    Updated: 2022/02/08 13:49:06 by mchatzip         ###   ########.fr        #
+#    Updated: 2022/03/16 16:51:15 by mchatzip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ clean:
 
 fclean:		clean
 			$(RM) $(NAME)
-			rm -r brainz.dSYM
+			rm -r horde.dSYM
 
 re:			fclean all
 

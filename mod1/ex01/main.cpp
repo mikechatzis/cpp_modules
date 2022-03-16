@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:31:43 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/08 13:46:24 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:50:04 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main()
 {
-	Zombie *horde = zombieHorde(6, "test");
-	delete horde;
+	Zombie *horde = zombieHorde(6, "Henry Kissinger");
+	delete [] horde;
 }
