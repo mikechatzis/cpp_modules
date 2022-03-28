@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 14:30:18 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 15:31:57 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/28 15:14:18 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ int main(void)
 	for (int i = 0; i < 20; i++)
 	{
 		std::vector<int> tmp;
-		Span sprandom = Span(100000);
-		for (int i = 0; i < 100000; i++)
-			tmp.push_back((rand() % 100000) - 50000);
+		Span sprandom = Span(10000);
+		for (int i = 0; i < 10000; i++)
+			tmp.push_back((rand() % 10000) - 5000);
 		sprandom.addNumber(tmp.begin(), tmp.end());
-		displaySpan("Random", sprandom);
+		 displaySpan("Random", sprandom);
 	}
 
 	std::cout << "---" << std::endl;

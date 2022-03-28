@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 12:37:07 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 13:18:15 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/28 12:47:01 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,12 @@
 #include <algorithm>
 
 template<typename T> typename T::iterator easyfind(T &t, int i){
-	return(std::find(t.begin(), t.end(), i));
+	typename T::iterator it = std::find(t.begin(), t.end(), i);
+	if (it == t.end())
+		std::cout << "int: " << i << " ,not found in container" << std::endl;
+	else
+		std::cout << "int: " << i << " ,found in container" << std::endl;
+	return(it);
 }
 
 template<typename key_type, typename value_type>
@@ -27,9 +32,13 @@ typename std::map<key_type, value_type>::iterator easyfind(std::map<key_type, va
 	while (it != m.end())
 	{
 		if (it->second == i)
-			return it;	
+		{	
+			std::cout << "int: " << i << " ,found in container" << std::endl;
+			return it;
+		}
 		it++;
 	}
+	std::cout << "int: " << i << " ,not found in container" << std::endl;
 	return m.end();
 }
 
@@ -39,9 +48,13 @@ typename std::multimap<key_type, value_type>::iterator easyfind(std::multimap<ke
 	while (it != m.end())
 	{
 		if (it->second == i)
-			return it;	
+		{	
+			std::cout << "int: " << i << " ,found in container" << std::endl;
+			return it;
+		}
 		it++;
 	}
+	std::cout << "int: " << i << " ,not found in container" << std::endl;
 	return m.end();
 }
 

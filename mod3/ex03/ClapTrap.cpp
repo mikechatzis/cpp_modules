@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:41:31 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 16:29:35 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/24 17:17:38 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,13 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &other)
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (!this->EP)
+	if (!this->getEP())
 	{
-		std::cout << "ClapTrap " << this->Name << " has no energy left to attack" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " has no energy left to attack" << std::endl;
 		return; 
 	}
-	this->EP -= 1;
-	if (this->HPmax == 10)
-		std::cout << "ClapTrap " << this->Name << " attacks " << target << " causing " << this->AD << " points of damage!" << std::endl;
-	else
-		std::cout << "ScavTrap " << this->Name << " attacks " << target << " causing " << this->AD << " points of damage!" << std::endl;
-
+	this->reduceEP();
+	std::cout << "ClapTrap " << this->getName() << " attacks " << target << " causing " << this->getAD() << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -106,14 +102,23 @@ std::string ClapTrap::getName() const
 	return(this->Name);
 }
 
-void ClapTrap::setName(std:: string const &name)
+int ClapTrap::getHP() const
 {
-	this->Name = name;
+	return(this->HP);
 }
 
-void ClapTrap::printStats()
+int ClapTrap::getEP() const
 {
-	std::cout << "HP: " << this->HP << std::endl;
-	std::cout << "EP: " << this->EP << std::endl;
-	std::cout << "AD: " << this->AD << std::endl;
+	return(this->EP);
+}
+
+int ClapTrap::getAD() const
+{
+	return(this->AD);
+}
+
+void ClapTrap::reduceEP()
+{
+	if (this->EP > 0)
+		this->EP -= 1;
 }

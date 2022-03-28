@@ -6,12 +6,12 @@
 #    By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 14:41:30 by mchatzip          #+#    #+#              #
-#    Updated: 2022/03/11 11:31:36 by mchatzip         ###   ########.fr        #
+#    Updated: 2022/03/27 21:59:33 by mchatzip         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= g++
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 RM		= rm -f
 

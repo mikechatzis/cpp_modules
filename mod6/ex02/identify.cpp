@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:28:28 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/10 17:10:38 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/27 19:51:53 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,23 @@ void identify(Base *p)
 
 void identify(Base &p)
 {
-	identify(&p);
+	Base tmp;
+	try
+	{
+		tmp = dynamic_cast<A&>(p);
+		std::cout << "Class is of type: A" << std::endl;
+	}
+	catch(std::exception &e){}
+	try
+	{
+		tmp = dynamic_cast<B&>(p);
+		std::cout << "Class is of type: B" << std::endl;
+	}
+	catch(std::exception &e){}
+	try
+	{
+		tmp = dynamic_cast<C&>(p);
+		std::cout << "Class is of type: C" << std::endl;
+	}
+	catch(std::exception &e){}
 }

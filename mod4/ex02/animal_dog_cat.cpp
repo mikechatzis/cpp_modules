@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:34:40 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/16 14:41:25 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/25 19:53:45 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ Cat::~Cat()
 
 void Cat::makeSound() const
 {
-	std::cout << "where is my tuna slave !?\n.....I meant \"meow\"" << std::endl;
+	std::cout  << "\033[31mwhere is my tuna slave !?\n\033[35m.....I meant \"meow\"\033[37m" << std::endl;
 }
 
 void Cat::expressThoughts() const

@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:51:15 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 16:09:40 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:44:05 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,21 @@ FragTrap::FragTrap(FragTrap const & other)
 FragTrap &FragTrap::operator=(FragTrap const &other)
 {
 	this->setData(other.getName(), 100, 100, 30, 100);
-	this->gatekeep = other.gatekeep;
 	return *this;
 }
 
 void FragTrap::highFivesGuys()
 {
 	std::cout << "FragTrap " << this->getName() << " accepted a high-five !" << std::endl;
+}
+
+void FragTrap::attack(const std::string& target)
+{
+	if (!this->getEP())
+	{
+		std::cout << "FragTrap " << this->getName() << " has no energy left to attack" << std::endl;
+		return; 
+	}
+	this->reduceEP();
+	std::cout << "FragTrap " << this->getName() << " attacks " << target << " causing " << this->getAD() << " points of damage!" << std::endl;
 }

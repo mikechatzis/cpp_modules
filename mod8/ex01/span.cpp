@@ -6,11 +6,12 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:41:17 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/16 12:28:45 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/28 15:07:06 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
+#include <iostream>
 
 Span::Span(size_t n) : N(n) 
 {
@@ -58,7 +59,7 @@ size_t Span::shortestSpan()
 			n++;
 		}
 		f++;
-		if (f != this->v.end())
+		if (f == this->v.end())
 			break;
 		n = f + 1;
 	}

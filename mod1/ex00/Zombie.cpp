@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:31:43 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/07 18:26:15 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/24 14:04:38 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ Zombie::Zombie(){};
 
 Zombie::~Zombie(void)
 {
-	std::cout << Zombie:: name << std::endl;
+	std::cout << Zombie::name << std::endl;
 }

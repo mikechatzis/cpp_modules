@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:14:56 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/11 18:39:52 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/27 21:55:46 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ Array<T>::Array(Array const &other):
 template<typename T>
 Array<T>::~Array()
 {
-	if (this->length > 0)
+	if (this->length > 0 || (!this->length && !this->array[0]))
 		delete[] this->array;
 }
 

@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:34:39 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 16:21:15 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/24 17:13:54 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,14 @@ class ScavTrap : virtual public ClapTrap
 	private:
 		bool gatekeep;
 	public:
-		int HP, EP, AD, HPmax;
-		
-		ScavTrap();
 		ScavTrap(const std::string name);
 		ScavTrap(ScavTrap const &other);
 		~ScavTrap();
 
 		ScavTrap &operator=(ScavTrap const &other);
 
-		void attack(const std::string& target);
 		void guardGate();
+		void attack(const std::string& target);
 };
 
 #endif

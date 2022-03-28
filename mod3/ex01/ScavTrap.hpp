@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:34:39 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 16:00:49 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/24 16:12:56 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap : public ClapTrap
 
 		ScavTrap &operator=(ScavTrap const &other);
 
+		void attack(const std::string& target);
 		void guardGate();
 };
 

@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:41:31 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/20 17:48:16 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:47:18 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@
 
 int main()
 {
-	DiamondTrap d("MyName");
+	DiamondTrap d("Gem knight lady brilliant Diamond");
 	ScavTrap s("Street");
 	ClapTrap c("Proud");
 	
 	c.attack("birds");
-	s.ClapTrap::attack("WILD GEESE");
 	s.attack("WILD pigeons");
 	d.whoAmI();
 	d.printStats();
 	d.attack("this target");
+	d.guardGate();
+	d.highFivesGuys();
 }

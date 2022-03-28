@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:14:01 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/08 18:54:19 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/24 13:52:53 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 #include <sstream>
 #include <fstream>
 #include <exception>
+#include <stdlib.h>
 
 #endif

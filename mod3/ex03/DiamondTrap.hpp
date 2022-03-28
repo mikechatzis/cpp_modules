@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:03:45 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 16:11:59 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/25 17:39:50 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
-private:
-	std::string Name;
-public:
-	DiamondTrap(std::string name);
-	DiamondTrap(DiamondTrap const &other);
-	~DiamondTrap();
+	private:
+		std::string Name;
+	public:
+		DiamondTrap(std::string name);
+		DiamondTrap(DiamondTrap const &other);
+		~DiamondTrap();
 
-	DiamondTrap &operator=(DiamondTrap const &other);
+		DiamondTrap &operator=(DiamondTrap const &other);
 
-	void whoAmI();
+		void whoAmI();
+		void printStats();
+		using ScavTrap::attack;
 };
 
 #endif

@@ -6,39 +6,22 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:37:37 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 16:04:30 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/24 17:38:23 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
-{
-	this->HP = 22;
-	this->EP = 22;
-	this->AD = 22;
-	this->HPmax = 22;
-	std::cout << "ScavTrap constructor called" << std::endl;
-}
-
 ScavTrap::ScavTrap(const std::string name)
 {
-	this->HP = 22;
-	this->EP = 22;
-	this->AD = 22;
-	this->HPmax = 22;
-	this->setData(name, 22, 22, 22, 22);
+	this->setData(name, 40, 50, 20, 40);
 	this->gatekeep = false;
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &other)
 {
-	this->HP = 22;
-	this->EP = 22;
-	this->AD = 22;
-	this->HPmax = 22;
-	this->setData(other.getName(), 22, 22, 22, 22);
+	this->setData(other.getName(), 100, 50, 20, 100);
 	this->gatekeep = false;
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
@@ -50,7 +33,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
-	this->setData(other.getName(), 22, 22, 22, 22);
+	this->setData(other.getName(), 100, 50, 20, 100);
 	this->gatekeep = other.gatekeep;
 	return *this;
 }
@@ -68,11 +51,11 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (!this->EP)
+	if (!this->getEP())
 	{
-		std::cout << "DiamondTrap " << this->getName() << " has no energy left to attack" << std::endl;
+		std::cout << "ScavTrap " << this->getName() << " has no energy left to attack" << std::endl;
 		return; 
 	}
-	this->EP -= 1;
-		std::cout << "DiamondTrap " << this->getName() << " attacks " << target << " causing " << this->AD << " points of damage!" << std::endl;
+	this->reduceEP();
+	std::cout << "ScavTrap " << this->getName() << " attacks " << target << " causing " << this->getAD() << " points of damage!" << std::endl;
 }

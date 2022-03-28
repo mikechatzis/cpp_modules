@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:15:04 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/02/08 18:56:40 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/24 13:59:24 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ std::string	replace(std::string const &s, std::string const &needle, std::string
 	size_t	j = 0;
 	size_t	nlen (needle.length());
 
+	if (!nlen)
+	{
+		std::cerr << "String empty, content will not be modified. Please provide a non empty valid string" << std::endl;
+		return s;
+	}
 	for (size_t i = 0; i < s.length(); i++)
 	{
 		j = 0;

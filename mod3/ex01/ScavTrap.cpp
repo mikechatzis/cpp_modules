@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:37:37 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/12 16:05:22 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/24 16:22:06 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,14 @@ void ScavTrap::guardGate()
 	}
 	this->gatekeep = true;
 	std::cout << "ScavTrap " << this->getName() << " now guards the gateZ !" << std::endl;
+}
+void ScavTrap::attack(const std::string& target)
+{
+	if (!this->getEP())
+	{
+		std::cout << "ScavTrap " << this->getName() << " has no energy left to attack" << std::endl;
+		return; 
+	}
+	this->reduceEP();
+	std::cout << "ScavTrap " << this->getName() << " attacks " << target << " causing " << this->getAD() << " points of damage!" << std::endl;
 }

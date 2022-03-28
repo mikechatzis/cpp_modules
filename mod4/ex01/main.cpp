@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:05:22 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/16 14:40:27 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/25 20:24:51 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,19 @@ int main()
 	dog.expressThoughts();
 	std::cout << dog.getType() << std::endl;
 	std::cout << "------------------" << std::endl;
+
+	Dog *b = new Dog("Maxie");
+	b->setTestIdea("1st idea");
+	Dog *bc = new Dog(*b);
+	std::cout << "------------------" << std::endl;
+	b->printTestIdea();
+	bc->printTestIdea();
+	b->setTestIdea("2nd idea");
+	std::cout << "------------------" << std::endl;
+	b->printTestIdea();
+	bc->printTestIdea();
+	std::cout << "------------------" << std::endl;
 	
-	delete meta; delete i; delete j;
+	delete meta; delete i; delete j; delete b; delete bc;
 	return 0;
 }

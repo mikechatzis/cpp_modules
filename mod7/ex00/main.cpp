@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:23:28 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/11 18:06:09 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/27 22:02:50 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 	::swap(a ,b);																	 	  //
 	std::cout << "\nint swap: a = " << a << ", b = " << b << std::endl << std::endl;	  //
 																						  //
-	::swap(c ,d);																		  //	
+	::swap(c ,d);																		  //
 	std::cout << "char swap: c = " << c << ", d = " << d << std::endl << std::endl;		  //
 																						  //
 	::swap(s1 ,s2);														 				  //
@@ -31,16 +31,16 @@ int main()
  	////////////////////////////////////////////////////////////////////////////////////////
 
 	/* MIN */
-    ///////////////////////////////////////////////////////////////////////////																		 //
-	std::cout << "\nint min = " << ::min(a ,b) << std::endl << std::endl;	 //																					 //															 //	
-	std::cout << "char min = " << ::min(c ,d) << std::endl << std::endl;	 //																				 //													 //
+    ///////////////////////////////////////////////////////////////////////////
+	std::cout << "\nint min = " << ::min(a ,b) << std::endl << std::endl;	 //
+	std::cout << "char min = " << ::min(c ,d) << std::endl << std::endl;	 //
 	std::cout << "string min = " << ::min(s1 ,s2) << std::endl << std::endl; //
  	///////////////////////////////////////////////////////////////////////////
 
 	/* MAX */
-    ///////////////////////////////////////////////////////////////////////////																		 //
-	std::cout << "\nint max = " << ::max(a ,b) << std::endl << std::endl;	 //																					 //															 //	
-	std::cout << "char max = " << ::max(c ,d) << std::endl << std::endl;	 //																				 //													 //
+    ///////////////////////////////////////////////////////////////////////////
+	std::cout << "\nint max = " << ::max(a ,b) << std::endl << std::endl;	 //
+	std::cout << "char max = " << ::max(c ,d) << std::endl << std::endl;	 //
 	std::cout << "string max = " << ::max(s1 ,s2) << std::endl << std::endl; //
  	///////////////////////////////////////////////////////////////////////////
 

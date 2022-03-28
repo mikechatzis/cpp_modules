@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:29:59 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/16 14:37:58 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/25 20:18:45 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ class Dog : virtual public Animal
 		void makeSound() const;
 		void expressThoughts() const;
 		void getBrainAddr() const;
+
+		void setTestIdea(std::string const &s);
+		void printTestIdea();
 
 		Dog const &operator=(Dog const &other);
 };

@@ -6,11 +6,12 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 13:12:34 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/16 13:23:19 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/27 22:10:18 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Mutantstack.hpp"
+#include <iostream>
 
 int main()
 {

@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:34:40 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/16 14:41:25 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/25 20:22:19 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ Dog const &Dog::operator=(Dog const &other)
 
 void Dog::getBrainAddr() const
 {
-	std::cout << "Address of Cat: " << this->name << ", is " << this->brain << std::endl;;
+	std::cout << "Address of Dog: " << this->name << ", is " << this->brain << std::endl;;
 }
 
 /* Cat class functions*/
@@ -147,7 +147,7 @@ Cat::~Cat()
 
 void Cat::makeSound() const
 {
-	std::cout << "where is my tuna slave !?\n.....I meant \"meow\"" << std::endl;
+	std::cout  << "\033[31mwhere is my tuna slave !?\n\033[35m.....I meant \"meow\"\033[37m" << std::endl;
 }
 
 void Cat::expressThoughts() const
@@ -178,4 +178,14 @@ Cat const &Cat::operator=(Cat const &other)
 void Cat::getBrainAddr() const
 {
 	std::cout << "Address of Cat: " << this->name << ", is " << this->brain << std::endl;
+}
+
+void Dog::setTestIdea(std::string const &s)
+{
+	this->brain->ideas[0] = s;
+}
+
+void Dog::printTestIdea()
+{
+	std::cout << this->name << " idea = " << this->brain->ideas[0] << std::endl << std::endl;
 }

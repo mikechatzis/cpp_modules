@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:22:41 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/16 16:02:41 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/27 12:01:25 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ template<typename type> type min(type &a, type &b){
 		return b;
 }
 
-template<class type> type max(type &a, type &b){
+template<typename type> type max(type &a, type &b){
 	if (a < b)
 		return b;
 	else 

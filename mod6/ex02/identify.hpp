@@ -6,7 +6,7 @@
 /*   By: mchatzip <mchatzip@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:23:59 by mchatzip          #+#    #+#             */
-/*   Updated: 2022/03/10 16:31:00 by mchatzip         ###   ########.fr       */
+/*   Updated: 2022/03/26 18:40:41 by mchatzip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ class B : virtual public Base
 class C : virtual public Base
 {
 };
+
+class D : virtual public Base
+{
+};
+
+
 
 Base * generate(void);
 void identify(Base* p);
